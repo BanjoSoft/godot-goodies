@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt657sw8k8s8c"]
+
+[ext_resource type="Material" uid="uid://bxk2lysc6kptr" path="res://background_shaders/box_material.tres" id="1_t8dd4"]
+[ext_resource type="Material" uid="uid://b8ruxwuppolg1" path="res://background_shaders/dots_material.tres" id="2_mebbh"]
+
+[node name="TestScene" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Box" type="Panel" parent="."]
+material = ExtResource("1_t8dd4")
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Dots" type="Panel" parent="."]
+material = ExtResource("2_mebbh")
+layout_mode = 2
+size_flags_horizontal = 3

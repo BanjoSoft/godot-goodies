@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bxk2lysc6kptr"]
+
+[ext_resource type="Shader" uid="uid://7lql40a1xwkl" path="res://background_shaders/sliding_checker_shader.gdshader" id="1_nmh55"]
+
+[resource]
+shader = ExtResource("1_nmh55")
+shader_parameter/size = 20.0
+shader_parameter/angle = 0.785
+shader_parameter/speed = 0.03
+shader_parameter/color1 = Color(1, 1, 1, 1)
+shader_parameter/color2 = Color(0, 0, 0, 1)
