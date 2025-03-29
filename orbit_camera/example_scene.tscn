@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4xp53ovyslk3"]
+
+[ext_resource type="Script" uid="uid://c0gh3ku5grggb" path="res://orbit_camera/camera_rig.gd" id="1_e0roq"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ha0ib"]
+size = Vector2(20, 20)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e0roq"]
+
+[sub_resource type="Sky" id="Sky_iblq1"]
+sky_material = SubResource("ProceduralSkyMaterial_e0roq")
+
+[sub_resource type="Environment" id="Environment_1y0ng"]
+sky = SubResource("Sky_iblq1")
+ambient_light_source = 3
+
+[node name="ExampleScene" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_ha0ib")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.61853, 0, -1.9023)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.651538, 0.420166, 1.42346)
+size = Vector3(1, 1.84033, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(0.30528, 0.487913, 0.817768, 0, 0.858763, -0.512373, -0.952263, 0.156417, 0.262163, 1.59657, 0.420166, -0.844785)
+size = Vector3(1, 1.84033, 1)
+
+[node name="Marker3D" type="Marker3D" parent="."]
+script = ExtResource("1_e0roq")
+
+[node name="Camera3D" type="Camera3D" parent="Marker3D"]
+transform = Transform3D(1, 0, 0, 0, 0.510243, 0.86003, 0, -0.86003, 0.510243, 0, 4.14883, 1.75268)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1y0ng")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.760123, 0.331711, -0.558732, -8.85565e-09, 0.859879, 0.510498, 0.64978, -0.388041, 0.653613, 0, 0, 0)
+shadow_enabled = true
